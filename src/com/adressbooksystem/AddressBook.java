@@ -77,6 +77,22 @@ public class AddressBook {
         System.out.println(list);
     }
 
+    /*
+     * 4)Created method for deleting contacts
+     */
+    public void deleteContact() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter the name for deletion");
+        String name = sc.next();
+        for (int i = 0; i < list.size(); i++) {
+            if (name.equals(list.get(i).getFirstName())) {
+                list.remove(i);
+                break;
+            } else {
+                System.out.println("Contact not available");
+            }
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -88,7 +104,11 @@ public class AddressBook {
             System.out.println("Enter choice which you want to perform");
             System.out.println("Enter 1 to add contact");
             System.out.println("Enter 2 to edit contact");
-            System.out.println("Enter 3 to exit");
+            System.out.println("Enter 3 for deleting contact");
+
+            /*
+             * Taking Input of Choice
+             */
             int button = sc.nextInt();
             switch (button) {
                 case 1:
@@ -96,6 +116,9 @@ public class AddressBook {
                     break;
                 case 2:
                     addressBook.editContact();
+                    break;
+                case 3:
+                    addressBook.deleteContact();
                     break;
                 default:
                     b = false;
@@ -105,6 +128,7 @@ public class AddressBook {
         }
     }
 }
+
 
 
 
