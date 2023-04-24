@@ -80,5 +80,17 @@ public class Contact {
     public void setEmail(String email) {
         this.email =email;
     }
+    public String toString() {
+        return "ContactPerson{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip=" + zip +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
 
