@@ -1,6 +1,7 @@
 package com.adressbooksystem;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBook {
@@ -17,29 +18,41 @@ public class AddressBook {
         /*
          1) Taking user input for contact details and set the details in contact class
          */
-        Contact contact = new Contact();
+
+        ArrayList<Contact> list = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Welcome to Address Book and varous operation involved in it");
-        System.out.println("Enter first name");
-        contact.setFirstName(sc.next());
-        System.out.println("Enter last name");
-        contact.setLastName(sc.next());
-        System.out.println("Enter address");
-        contact.setAddress(sc.next());
-        System.out.println("Enter city");
-        contact.setCity(sc.next());
-        System.out.println("Enter state");
-        contact.setState(sc.next());
-        System.out.println("Enter zip");
-        contact.setZip(sc.nextInt());
-        System.out.println("Enter phone number");
-        contact.setPhoneNumber(sc.nextLong());
-        System.out.println("Enter email");
-        contact.setEmail(sc.next());
         /*
-         2) Get the details form contact class and printing them
+         * 1. Display Message
          */
-        System.out.println("your contact is : " + " firstName " + contact.getFirstName() + " lastName " + contact.getLastName() + " address " + contact.getAddress() + " city " + contact.getCity() + " state " + contact.getState() + " Zip " + contact.getZip() + " phoneNumber " + contact.getPhoneNumber() + " email " + contact.getEmail());
+        System.out.println("Please enter how much contact you want to add");
+        int noOfContact = sc.nextInt();
+        // Taking for loop for add multiple contact details
+        for (int i = 1; i <= noOfContact; i++) {
+            //Declaring Object
+            Contact contact = new Contact();
+            //Display messages for various parameter of the address book
+            System.out.println("Enter first name of contact ");
+            contact.setFirstName(sc.next());
+            System.out.println("Enter last name contact ");
+            contact.setLastName(sc.next());
+            System.out.println("Enter address contact ");
+            contact.setAddress(sc.next());
+            System.out.println("Enter city contact ");
+            contact.setCity(sc.next());
+            System.out.println("Enter state contact ");
+            contact.setState(sc.next());
+            System.out.println("Enter zip contact ");
+            contact.setZip(sc.nextInt());
+            System.out.println("Enter phone number  contact ");
+            contact.setPhoneNumber(sc.nextLong());
+            System.out.println("Enter email  contact ");
+            contact.setEmail(sc.next());
+
+            // Adding details in array list
+            list.add(contact);
+        }
+        System.out.println(list);
+
+
     }
 }
-
